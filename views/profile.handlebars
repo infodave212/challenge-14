@@ -6,20 +6,17 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+    <h3>Create new tech-blog:</h3>
 
-    <form class="form new-project-form">
+    <form class="form tech-blog-form">
       <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <label for="tech-blog-name">project name:</label>
+        <input class="form-input" type="text" id="tech-blog-name" name="tech-blog-name" />
       </div>
+      
       <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
-      </div>
-      <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <label for="tech-blog-desc">description:</label>
+        <textarea class="form-input" id="tech-blog-desc" name="tech-blog-desc"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
@@ -27,17 +24,17 @@
     </form>
   </div>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+  {{#if tech-blogs.length}}
+  <div class="col-md-6 tech-blog-list">
+    <h3>Current tech-blogs:</h3>
 
-    {{#each projects as |project|}}
+    {{#each tech-blogs as |tech-blog|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        <h4><a href="/tech-blog/{{tech-blog.id}}">{{tech-blog.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{tech-blog.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
