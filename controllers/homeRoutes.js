@@ -33,15 +33,15 @@ router.get('/techblog/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
 
-    const TechBlog = TechBlogData.get({ plain: true });
+    const techBlog = TechBlogData.get({ plain: true });
 
     res.render('techblog', {
-      ...techblog,
+      ...techBlog,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -59,7 +59,7 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
+console.log(user)
     res.render('profile', {
       ...user,
       logged_in: true

@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome, {{username}}!</h2>
   </div>
 </div>
 
@@ -10,13 +10,13 @@
 
     <form class="form tech-blog-form">
       <div class="form-group">
-        <label for="tech-blog-name">project name:</label>
-        <input class="form-input" type="text" id="tech-blog-name" name="tech-blog-name" />
+        <label for="title"> title:</label>
+        <input class="form-input" type="text" id="title" name="title" />
       </div>
       
       <div class="form-group">
-        <label for="tech-blog-desc">description:</label>
-        <textarea class="form-input" id="tech-blog-desc" name="tech-blog-desc"></textarea>
+        <label for="contents">contents:</label>
+        <textarea class="form-input" id="contents" name="contents"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
@@ -24,17 +24,17 @@
     </form>
   </div>
 
-  {{#if tech-blogs.length}}
+  {{#if techBlogs.length}}
   <div class="col-md-6 tech-blog-list">
     <h3>Current tech-blogs:</h3>
 
-    {{#each tech-blogs as |tech-blog|}}
+    {{#each techBlogs as |techBlog|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/tech-blog/{{tech-blog.id}}">{{tech-blog.name}}</a></h4>
+        <h4><a href="/techblog/{{techBlog.id}}">{{techBlog.title}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{tech-blog.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{techBlog.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
